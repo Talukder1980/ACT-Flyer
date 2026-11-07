@@ -16,19 +16,11 @@ export default function App() {
   const [isPledgeOpen, setIsPledgeOpen] = useState<boolean>(false);
   const [pledgeTargetInitiative, setPledgeTargetInitiative] = useState<Initiative | undefined>(undefined);
   const [favorites, setFavorites] = useState<number[]>([1, 2]); // default couple favorites
-  const [exploredIds, setExploredIds] = useState<number[]>([1, 2]); // default explored initiatives
 
   const handleToggleFavorite = (id: number) => {
-    setFavorites((prev) => {
-      const next = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id];
-      return next;
-    });
-    // Favoriting also marks as explored
-    setExploredIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
-  };
-
-  const handleMarkExplored = (id: number) => {
-    setExploredIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
   };
 
   const handleOpenPledge = (initiative?: Initiative) => {
@@ -117,14 +109,9 @@ export default function App() {
         {/* Interactive 18 Objectives Explorer */}
         {activeView === 'web' && (
           <ObjectivesGrid
-            onSelectInitiative={(initiative) => {
-              handleMarkExplored(initiative.id);
-              setSelectedInitiative(initiative);
-            }}
+            onSelectInitiative={(initiative) => setSelectedInitiative(initiative)}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
-            exploredIds={exploredIds}
-            onMarkExplored={handleMarkExplored}
             onOpenPledge={handleOpenPledge}
           />
         )}
