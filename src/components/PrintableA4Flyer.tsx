@@ -20,6 +20,9 @@ import { INITIATIVES, TRUST_DETAILS } from '../data/initiatives';
 import { DynamicIcon } from './DynamicIcon';
 import trustSeal from '../assets/images/trust_emblem_logo_1794065641831.jpg';
 import heroPhoto from '../assets/images/humanitarian_community_hero_1794065642538.jpg';
+import elderOrphanPhoto from '../assets/images/elder_care_orphan_warmth_1794067756957.jpg';
+import cleanWaterPhoto from '../assets/images/clean_water_tree_plantation_1794067757888.jpg';
+import culturalMusicPhoto from '../assets/images/cultural_arts_music_training_1794067758261.jpg';
 
 interface PrintableA4FlyerProps {
   onOpenPledge: () => void;
@@ -185,17 +188,17 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                     </p>
 
                     {/* 4 Core Values */}
-                    <div className="space-y-2 my-3">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-stone-500">
+                    <div className="space-y-1.5 my-2">
+                      <div className="text-[9.5px] font-bold uppercase tracking-wider text-stone-500">
                         Our Governing Pillars
                       </div>
                       {TRUST_DETAILS.coreValues.map((v, i) => (
-                        <div key={i} className="bg-white p-2 rounded-lg border border-stone-200/80 shadow-2xs">
-                          <div className="text-[11px] font-bold text-emerald-900 flex items-center gap-1">
-                            <CheckCircle className="w-3 h-3 text-emerald-600" />
+                        <div key={i} className="bg-white p-1.5 rounded-lg border border-stone-200/80 shadow-2xs">
+                          <div className="text-[10px] font-bold text-emerald-900 flex items-center gap-1">
+                            <CheckCircle className="w-2.5 h-2.5 text-emerald-600" />
                             <span>{v.title}</span>
                           </div>
-                          <div className="text-[9px] text-stone-600 leading-tight mt-0.5">
+                          <div className="text-[8.5px] text-stone-600 leading-tight mt-0.5">
                             {v.desc}
                           </div>
                         </div>
@@ -203,13 +206,27 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                     </div>
 
                     {/* Founder Quote */}
-                    <div className="p-2.5 rounded-lg bg-amber-50/80 border border-amber-200 text-[10px] text-amber-950 italic font-serif">
+                    <div className="p-2 rounded-lg bg-amber-50/80 border border-amber-200 text-[9px] text-amber-950 italic font-serif leading-snug">
                       "{TRUST_DETAILS.founderQuote}"
+                    </div>
+
+                    {/* Photo Spot: Elder & Orphan Sanctuary Care (Pillars 04 & 05) */}
+                    <div className="mt-2 rounded-xl overflow-hidden border border-emerald-900/15 shadow-2xs relative">
+                      <img
+                        src={elderOrphanPhoto}
+                        alt="Elder and Orphan Sanctuary Care"
+                        className="w-full h-16 sm:h-20 object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-transparent flex items-end p-1.5">
+                        <span className="text-[8px] font-semibold text-white tracking-wide">
+                          Pillars 04 & 05 · Nurturing Sanctuaries & Elder Care
+                        </span>
+                      </div>
                     </div>
                   </div>
 
                   {/* Bottom Panel 1 Footer */}
-                  <div className="pt-2 border-t border-stone-200 text-[9px] text-stone-500 flex justify-between items-center">
+                  <div className="pt-1.5 border-t border-stone-200 text-[8.5px] text-stone-500 flex justify-between items-center">
                     <span>Regd: ACT-8492/98</span>
                     <span className="font-semibold text-emerald-800">Inside Flap</span>
                   </div>
@@ -221,8 +238,8 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                 <div className="p-4 sm:p-6 flex flex-col justify-between bg-stone-900 text-white relative">
                   <div>
                     {/* Header */}
-                    <div className="text-center pb-3 border-b border-stone-700/80 mb-3">
-                      <div className="text-[10px] uppercase font-bold tracking-widest text-amber-400">
+                    <div className="text-center pb-2 border-b border-stone-700/80 mb-2">
+                      <div className="text-[9.5px] uppercase font-bold tracking-widest text-amber-400">
                         Connect & Contribute
                       </div>
                       <h3 className="font-cinzel text-sm sm:text-base font-bold text-white">
@@ -230,8 +247,22 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                       </h3>
                     </div>
 
+                    {/* Photo Spot: Clean Water Plants & Afforestation */}
+                    <div className="my-2 rounded-xl overflow-hidden border border-stone-700/80 shadow-md relative">
+                      <img
+                        src={cleanWaterPhoto}
+                        alt="Community Clean Water & Afforestation Projects"
+                        className="w-full h-18 sm:h-20 object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-transparent flex items-end p-1.5">
+                        <span className="text-[8px] font-semibold text-amber-300">
+                          Pillars 07 & 10 · 180+ Water Plants & 350K+ Trees Planted
+                        </span>
+                      </div>
+                    </div>
+
                     {/* Contact details */}
-                    <div className="space-y-2 text-[10px] sm:text-[11px] text-stone-300">
+                    <div className="space-y-1.5 text-[9.5px] sm:text-[10px] text-stone-300">
                       <div className="flex items-start gap-2">
                         <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                         <div>
@@ -435,31 +466,45 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                   </div>
 
                   {/* 6 Objectives */}
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {col1.map((item) => (
                       <div
                         key={item.id}
-                        className={`p-2 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
+                        className={`p-1.5 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
                         style={{ borderLeftWidth: '3px', borderLeftColor: item.accentColor }}
                       >
                         <div className="flex items-center justify-between gap-1 mb-0.5">
                           <div className="flex items-center gap-1.5 min-w-0">
                             <div
-                              className="w-5 h-5 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
+                              className="w-4 h-4 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
                               style={{ backgroundColor: item.accentColor }}
                             >
-                              <DynamicIcon name={item.iconName} className="w-3 h-3 stroke-[2.5]" />
+                              <DynamicIcon name={item.iconName} className="w-2.5 h-2.5 stroke-[2.5]" />
                             </div>
-                            <span className="font-outfit font-bold text-[11px] sm:text-xs text-stone-900 truncate">
+                            <span className="font-outfit font-bold text-[10.5px] sm:text-[11px] text-stone-900 truncate">
                               {item.number}. {item.title}
                             </span>
                           </div>
                         </div>
-                        <p className="text-[9.5px] text-stone-700 leading-tight font-sans line-clamp-2">
+                        <p className="text-[9px] text-stone-700 leading-tight font-sans line-clamp-2">
                           {item.shortDescription}
                         </p>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Photo Spotlight: Community Healthcare & Classrooms */}
+                  <div className="mt-2 rounded-lg overflow-hidden border border-emerald-900/15 shadow-2xs relative">
+                    <img
+                      src={heroPhoto}
+                      alt="Community Healthcare and Education Classrooms"
+                      className="w-full h-12 sm:h-14 object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent flex items-end p-1">
+                      <span className="text-[7.5px] font-semibold text-emerald-100">
+                        Field Impact · Free Medical Consults & Education Labs
+                      </span>
+                    </div>
                   </div>
 
                   {/* Panel footer */}
@@ -484,31 +529,45 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                   </div>
 
                   {/* 6 Objectives */}
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {col2.map((item) => (
                       <div
                         key={item.id}
-                        className={`p-2 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
+                        className={`p-1.5 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
                         style={{ borderLeftWidth: '3px', borderLeftColor: item.accentColor }}
                       >
                         <div className="flex items-center justify-between gap-1 mb-0.5">
                           <div className="flex items-center gap-1.5 min-w-0">
                             <div
-                              className="w-5 h-5 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
+                              className="w-4 h-4 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
                               style={{ backgroundColor: item.accentColor }}
                             >
-                              <DynamicIcon name={item.iconName} className="w-3 h-3 stroke-[2.5]" />
+                              <DynamicIcon name={item.iconName} className="w-2.5 h-2.5 stroke-[2.5]" />
                             </div>
-                            <span className="font-outfit font-bold text-[11px] sm:text-xs text-stone-900 truncate">
+                            <span className="font-outfit font-bold text-[10.5px] sm:text-[11px] text-stone-900 truncate">
                               {item.number}. {item.title}
                             </span>
                           </div>
                         </div>
-                        <p className="text-[9.5px] text-stone-700 leading-tight font-sans line-clamp-2">
+                        <p className="text-[9px] text-stone-700 leading-tight font-sans line-clamp-2">
                           {item.shortDescription}
                         </p>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Photo Spotlight: Clean Water & Tree Afforestation */}
+                  <div className="mt-2 rounded-lg overflow-hidden border border-emerald-900/15 shadow-2xs relative">
+                    <img
+                      src={cleanWaterPhoto}
+                      alt="Clean Water Plants and Afforestation Drives"
+                      className="w-full h-12 sm:h-14 object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent flex items-end p-1">
+                      <span className="text-[7.5px] font-semibold text-amber-200">
+                        Field Impact · 180+ Water Plants & 350K+ Trees Planted
+                      </span>
+                    </div>
                   </div>
 
                   {/* Panel footer */}
@@ -533,31 +592,45 @@ export const PrintableA4Flyer: React.FC<PrintableA4FlyerProps> = ({ onOpenPledge
                   </div>
 
                   {/* 6 Objectives */}
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {col3.map((item) => (
                       <div
                         key={item.id}
-                        className={`p-2 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
+                        className={`p-1.5 rounded-lg border transition-all ${item.colors.bgLight} ${item.colors.border}`}
                         style={{ borderLeftWidth: '3px', borderLeftColor: item.accentColor }}
                       >
                         <div className="flex items-center justify-between gap-1 mb-0.5">
                           <div className="flex items-center gap-1.5 min-w-0">
                             <div
-                              className="w-5 h-5 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
+                              className="w-4 h-4 rounded flex items-center justify-center text-white shrink-0 shadow-2xs"
                               style={{ backgroundColor: item.accentColor }}
                             >
-                              <DynamicIcon name={item.iconName} className="w-3 h-3 stroke-[2.5]" />
+                              <DynamicIcon name={item.iconName} className="w-2.5 h-2.5 stroke-[2.5]" />
                             </div>
-                            <span className="font-outfit font-bold text-[11px] sm:text-xs text-stone-900 truncate">
+                            <span className="font-outfit font-bold text-[10.5px] sm:text-[11px] text-stone-900 truncate">
                               {item.number}. {item.title}
                             </span>
                           </div>
                         </div>
-                        <p className="text-[9.5px] text-stone-700 leading-tight font-sans line-clamp-2">
+                        <p className="text-[9px] text-stone-700 leading-tight font-sans line-clamp-2">
                           {item.shortDescription}
                         </p>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Photo Spotlight: Youth Music Academy & Cultural Arts */}
+                  <div className="mt-2 rounded-lg overflow-hidden border border-purple-200 shadow-2xs relative">
+                    <img
+                      src={culturalMusicPhoto}
+                      alt="Cultural Music Academy & Instrumental Training"
+                      className="w-full h-12 sm:h-14 object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-950/80 via-transparent to-transparent flex items-end p-1">
+                      <span className="text-[7.5px] font-semibold text-purple-100">
+                        Field Impact · Traditional Folk Arts & Music Academies
+                      </span>
+                    </div>
                   </div>
 
                   {/* Panel footer */}
