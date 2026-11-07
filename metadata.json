@@ -1,0 +1,6 @@
+{
+  "name": "Afzal Charitable Trust - Mission & Initiatives Flyer",
+  "description": "Vibrant, interactive, and printable A4 foldable flyer highlighting the 18 core humanitarian objectives of Afzal Charitable Trust.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1c1917;
+    background-color: #fafaf9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-outfit {
+  font-family: var(--font-outfit);
+}
+
+/* Print Specific Rules for A4 Both-Side Foldable Flyer */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html, body {
+    width: 297mm;
+    height: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .a4-page {
+    width: 297mm !important;
+    height: 210mm !important;
+    max-height: 210mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .a4-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}
+
+/* Screen Preview container for A4 sheet */
+.a4-landscape-preview {
+  width: 297mm;
+  min-height: 210mm;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .a4-landscape-preview {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
+/* Fold Line Styling */
+.fold-line-dashed {
+  background-image: linear-gradient(to bottom, #94a3b8 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: left;
+  background-size: 1px 12px;
+  background-repeat: repeat-y;
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
